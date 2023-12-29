@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* || RESET*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+input,
+button,
+textarea {
+  font: inherit;
+}
+fieldset {
+  border: 0;
+}
+
+/*|| VARIABLES*/
+:root {
+  /*FONTS*/
+  --FF: "Poppins", sans-serif;
+  --FS-XS: 0.85rem;
+  --FS-S: clamp(1rem, 2.2vh, 1.5rem); /*Small*/
+  --FS-M: clamp(1.5rem, 2.5vh, 4rem);
+  --FW-L: 300; /* Font Weight Light*/
+  --FW-R: 400; /* Font Weight Regular*/
+  --FW-M: 500; /* Font Weight Medium*/
+  --FW-SB: 600; /* Font Weight Semi-Bold*/
+
+  /*COLORS*/
+  --BODY-BGCOLOR: #83c5be;
+  --TITLE-BGCOLOR: #006d77;
+  --TITLE-COLOR: #edf6f9;
+  --WRAPPER-BGCOLOR: #edf6f9;
+
+  /*WIDTH & HEIGHT*/
+  --WRAPPER-WIDTH: 30.75em;
+  --TITLE-LINE-HEIGHT: 5em;
+  --ROW-HEIGHT: 2.8em;
+  --ICON-WIDTH: 2.93em;
+
+  /*PADDING MARGIN*/
+  --WRAPPER-PAD-BOTTOM: 1.5em;
+  --TITLE-PAD-LEFT: 1.25em;
+  --TITLE-MAR-BOTTOM: 1.5em;
+  --ROW-MARGIN: 0 1.5em 15px 1.5em;
+  --INPUT-PAD-LEFT: 4.37em;
+
+  /*BORDER*/
+  --WRAPPER-BRDR-RAD: 5px;
+  --TITLE-BRDR-RAD: 5px 5px 0 0;
+  --ICON-BRDR: 1px solid var(--TITLE-BGCOLOR);
+  --ICON-BRDR-RAD: 5px 0 0 5px;
+  --INPUT-BRDR-RAD: 5px;
+  --INPUT-BRDR: 1px solid lightgray;
+  --BUTTON-BRDR: var(--ICON-BRDR);
+}
+
+/*|| UTLITY CLASS*/
+.off-screen {
+  position: absolute;
+  left: -10000px;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+.center {
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: var(--FS);
+  font-family: var(--FF);
+}
+body {
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  background-color: var(--BODY-BGCOLOR);
+}
+
+.wrapper {
+  width: var(--WRAPPER-WIDTH);
+  background-color: var(--WRAPPER-BGCOLOR);
+  border-radius: var(--WRAPPER-BRDR-RAD);
+  padding-bottom: var(--WRAPPER-PAD-BOTTOM);
+}
+
+fieldset .title {
+  line-height: var(--TITLE-LINE-HEIGHT);
+  background-color: var(--TITLE-BGCOLOR);
+  width: 100%;
+  padding-left: var(--TITLE-PAD-LEFT);
+  border-radius: var(--TITLE-BRDR-RAD);
+  font-size: var(--FS-M);
+  font-weight: var(--FW-SB);
+  color: var(--TITLE-COLOR);
+  margin-bottom: var(--TITLE-MAR-BOTTOM);
+}
+
+fieldset .row {
+  margin: var(--ROW-MARGIN);
+  height: var(--ROW-HEIGHT);
+  position: relative;
+  font-size: var(--FS-S);
+}
+
+fieldset .row input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: var(--INPUT-PAD-LEFT);
+  border-radius: var(--INPUT-BRDR-RAD);
+  border: var(--INPUT-BRDR);
+}
+fieldset .row i {
+  position: absolute;
+  height: 100%;
+  width: var(--ICON-WIDTH);
+  background-color: var(--TITLE-BGCOLOR);
+  color: var(--TITLE-COLOR);
+  display: grid;
+  place-content: center;
+  border: var(--ICON-BRDR);
+  border-radius: var(--ICON-BRDR-RAD);
+}
+
+fieldset .button input {
+  padding-left: 0px;
+  color: var(--WRAPPER-BGCOLOR);
+  font-weight: var(--FW-R);
+  background-color: var(--TITLE-BGCOLOR);
+  cursor: pointer;
+  border: var(--BUTTON-BRDR);
+}

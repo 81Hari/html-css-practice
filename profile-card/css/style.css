@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* || RESET*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+input,
+button,
+textarea {
+  font: inherit;
+}
+/* || VARIABLES */
+
+:root {
+  /*FONT*/
+  --FF: "Poppins", sans-serif;
+  --FS-XS: 0.85rem; /*Extra-Small*/
+  --FS-S: clamp(1rem, 2.2vh, 1.5rem); /*Small*/
+  --FS-M: clamp(1.5rem, 2.5vh, 4rem);
+  --FW-L: 300; /* Font Weight Light*/
+  --FW-R: 400; /* Font Weight Regular*/
+  --FW-M: 500; /* Font Weight Medium*/
+  --FW-SB: 600; /* Font Weight Semi-Bold*/
+
+  /*HEIGHT & WIDTH*/
+  --PPC-HEIGHT: 9.35em;
+  --PPC-WIDTH: 9.35em;
+  --PCC-WIDTH: 23em;
+  --LINK-HEIGHT: 2.125em;
+  --LINK-WIDTH: 2.125em;
+
+  /*COLORS*/
+
+  --BODY-BG-COLOR: #404e4d;
+  /* --BODY-BG-COLOR: #7d5ba6; */
+  --PCC-BG-COLOR: #fffcff;
+  --PPC-BG-COLOR: #7d5ba6;
+  --PCC-BEFORE-BG-COLOR: var(--PPC-BG-COLOR);
+  --PI-TEXT-COLOR: #404e4d;
+  --LINK-BG-COLOR: var(--PPC-BG-COLOR);
+  --LINK-COLOR: var(--PCC-BG-COLOR);
+  --DATA-COLOR: #333;
+
+  /*BORDER*/
+  --PP-BORDER: 3px solid #fef9ff;
+  --PCC-BORDER-RADIUS: 24px;
+  --DATA-BORDER: 2px solid #e7e7e7;
+
+  /*BOX SHADOW*/
+  --PCC-BOX-SHADOW: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+  /*PADDING*/
+  --PPC-PADDING: 0.1875em;
+  --PCC-PADDING: 1.5em;
+  --DATA-PADDING: 0 1.25em;
+
+  /*MARGIN*/
+  --PPC-MARGIN: 0.6em;
+  --LINK-MARGIN: 0 0.5em;
+  --SM-MARGIN-TOP: 0.9em;
+}
+
+/*UTLITY CLASS*/
+.off-screen {
+  position: absolute;
+  left: -10000px;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+.center {
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: var(--FS);
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--FF);
+  background-color: var(--BODY-BG-COLOR);
+}
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.profile-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: var(--PCC-WIDTH);
+  width: 100%;
+  background-color: var(--PCC-BG-COLOR);
+  border-radius: var(--PCC-BORDER-RADIUS);
+  padding: var(--PCC-PADDING);
+  box-shadow: var(--PCC-BOX-SHADOW);
+  position: relative;
+}
+.profile-card-container::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 36%;
+  width: 100%;
+  border-radius: 24px 24px 0 0;
+  background-color: var(--PCC-BEFORE-BG-COLOR);
+}
+
+.profile-picture-container {
+  position: relative;
+  width: var(--PPC-WIDTH);
+  height: var(--PPC-HEIGHT);
+  border-radius: 50%;
+  padding: var(--PPC-PADDING);
+  background-color: var(--PPC-BG-COLOR);
+  margin-bottom: var(--PPC-MARGIN);
+}
+
+.profile-picture-container .profile-picture {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: var(--PP-BORDER);
+}
+.profile-card-container .personal-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--PI-TEXT-COLOR);
+}
+
+.personal-info .name {
+  font-size: var(--FS-S);
+  font-weight: var(--FW-M);
+}
+
+.personal-info .job {
+  font-size: var(--FS-XS);
+  font-weight: var(--FW-R);
+}
+
+.profile-card-container .social-media {
+  display: flex;
+  align-items: center;
+  margin-top: var(--SM-MARGIN-TOP);
+}
+
+.social-media .link {
+  display: grid;
+  place-content: center;
+  height: var(--LINK-HEIGHT);
+  width: var(--LINK-WIDTH);
+  border-radius: 50%;
+  background-color: var(--LINK-BG-COLOR);
+  color: var(--LINK-COLOR);
+  margin: var(--LINK-MARGIN);
+  font-size: var(--FS-M);
+  text-decoration: none;
+}
+
+.profile-card-container .analytics {
+  display: flex;
+  align-items: center;
+  margin-top: var(--SM-MARGIN-TOP);
+}
+
+.analytics .data {
+  display: flex;
+  align-items: center;
+  color: var(--DATA-COLOR);
+  font-weight: var(--FW-R);
+  padding: var(--DATA-PADDING);
+  border-right: var(--DATA-BORDER);
+}
+
+.data:last-child {
+  border-right: none;
+}
+
+.data .number {
+  margin-left: 2px;
+}
